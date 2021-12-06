@@ -11,14 +11,16 @@ import CalcButton from './CalcButton';
 function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
+  
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    dispatch( addOne )
-  }
+  // const handleClick = (e) => {
+  //   e.preventDefault()
+  //   dispatch( addOne )
+  // }
 
   return (
     <div className="App">
+      
       <nav className="navbar navbar-dark bg-dark">
         <a className="navbar-brand" href="#"> Reducer Challenge</a>
       </nav>
@@ -40,7 +42,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton onClick={handleClick} value={1}/>
+              <CalcButton onClick={() => dispatch( addOne() )} value={1}/>
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
